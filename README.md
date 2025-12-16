@@ -1,5 +1,5 @@
 # Wind Turbine Blade Damage Detection
-*Advanced Computer Vision & Deep Learning for Wind Turbine Inspection*
+* Deep Learning Class Project *
 **By: Syed Jabbar Shah | University of Massachusetts Lowell**
 
 # YOLOv8 Wind Turbine Damage Detection with Attention Mechanisms
@@ -404,9 +404,6 @@ This project is licensed under the terms specified in the LICENSE file.
 
 Based on the original YOLOv8 architecture by Ultralytics, enhanced with custom attention mechanisms for wind turbine damage detection applications. Repository organization follows ML industry best practices for maintainability and collaboration.
 
-##  Contact
 
-For questions about implementation, results, or repository structure, please open an issue in this repository.
 
 ---
-*Repository reorganized and updated: January 2025*
