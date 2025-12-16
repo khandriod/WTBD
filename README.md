@@ -1,5 +1,4 @@
 # Wind Turbine Blade Damage Detection
-![Project Logo](docs/figures/ulogo.png)
 *Advanced Computer Vision & Deep Learning for Wind Turbine Inspection*
 **By: Syed Jabbar Shah | University of Massachusetts Lowell**
 
@@ -9,10 +8,7 @@ This repository contains improved YOLOv8 implementations with various attention 
 
 Related research projects:
 
-- [Crack Quantification](https://github.com/khandriod/NOWRDC-Crack-Quantification)
-- [Multi-Damage Detection](https://github.com/khandriod/norwdc-mdd)
-
-## 🎯 Project Overview
+##  Project Overview
 
 Wind turbine damage detection using computer vision is crucial for predictive maintenance and ensuring optimal energy generation. This project implements and compares various attention mechanisms integrated into YOLOv8 architecture to improve detection accuracy of turbine blade damages.
 
@@ -21,7 +17,7 @@ This code is based on Yolov8 below is the archtecture of Yolov8 with attention m
 
 ![Yolo Architecture](docs/figures/figure_details.jpg)
 ![Yolo Architecture](docs/figures/figure_architecture.jpg)
-## 🚀 Quick Start
+##  Quick Start
 
 
 ## Downloadables
@@ -29,6 +25,10 @@ You can download all models results and weights here
 
 - [Download Models and Dataset](https://studentuml-my.sharepoint.com/:f:/g/personal/syed_jabbarshah_student_uml_edu/EpRUtQB4zyBJuEIChDG0pHgB0ORtIFXXCtlkSezEVLBfHA?e=GOCaUcjj)
 
+```
+python 3.12.7
+
+```
 
 ```bash
 # 1. Install dependencies
@@ -44,30 +44,35 @@ python wind_turbine_detector.py --model models/experiments_600/selective_kernel_
 python src/evaluation/yolo_model_evaluator.py --model models/experiments_600/selective_kernel_attention_20250719_021254/weights/best.pt
 ```
 
-## 📁 Repository Structure
+
+```
+Note: If you find pytroch releated error. It is sometime consistency between the module of 'ultralytics' within the Github repo and the python packages 'ultralytics'. Therefore, the script can only work without the package 'ultralytics' in the conda environment (should remove the 'ultralytics' package from the requirements.txt).
+```
+
+##  Repository Structure
 
 This repository follows ML project best practices with organized directories:
 
 ```
 FDI_Yolov8/
-├── 📂 src/                    # Source code organized by functionality
+├──  src/                    # Source code organized by functionality
 │   ├── detection/            # Detection & inference scripts
 │   ├── training/             # Training scripts  
 │   ├── evaluation/           # Model evaluation & testing
 │   └── utils/                # Utility functions
-├── 📂 data/                   # Datasets and samples
+├──  data/                   # Datasets and samples
 │   ├── raw/GRAZPEDWRI-DX/    # Main dataset
 │   └── samples/              # Test images
-├── 📂 models/                 # Trained models & experiments
+├──  models/                 # Trained models & experiments
 │   ├── experiments_200/      # 200-epoch experiments
 │   ├── experiments_600/      # 600-epoch experiments  
 │   └── legacy/               # Legacy attention mechanisms
-├── 📂 results/                # All outputs and analysis
-├── 📂 docs/                   # Documentation & figures
-└── 📄 wind_turbine_detector.py  # Main entry point
+├──  results/                # All outputs and analysis
+├──  docs/                   # Documentation & figures
+└──  wind_turbine_detector.py  # Main entry point
 ```
 
-### 📋 File Locations Quick Reference
+###  File Locations Quick Reference
 
 | What you need | Where to find it |
 |---------------|------------------|
@@ -88,9 +93,9 @@ FDI_Yolov8/
 
 ### Dataset
 
-## 🏆 Performance Results
+##  Performance Results
 
-### 📊 Complete Performance Comparison Table
+###  Complete Performance Comparison Table
 
 | **Model** | **Epochs** | **Precision** | **Recall** | **mAP50** | **mAP50-95** | **Category** |
 |-----------|------------|---------------|------------|-----------|--------------|--------------|
@@ -107,30 +112,30 @@ FDI_Yolov8/
 | **ResBlock CBAM** | 200 | 79.89% | 65.40% | 76.91% | 41.57% | Legacy |
 | **YOLOv8 Baseline** | 200 | 78.47% | 65.15% | 75.48% | 40.66% | Baseline |
 
-### 🏆 Top Performers Analysis
+###  Top Performers Analysis
 
-#### 🥇 **Best Model: SKA (600 epochs)**
+####  **Best Model: SKA (600 epochs)**
 - **mAP50**: 93.70% (highest precision at IoU=0.5)
 - **mAP50-95**: 69.42% (best overall detection accuracy)
 - **Precision**: 91.07% (fewest false positives)
 - **Recall**: 89.03% (excellent damage detection rate)
 - **Best for**: Production deployment with balanced performance
 
-#### 🥈 **Runner-up: EMA (600 epochs)**
+####  **Runner-up: EMA (600 epochs)**
 - **mAP50**: 93.95% (actually highest mAP50!)
 - **mAP50-95**: 66.98% 
 - **Precision**: 88.52%
 - **Recall**: 89.84% (highest recall)
 - **Best for**: Applications requiring maximum damage detection
 
-#### 🥉 **Third Place: MSPA (600 epochs)**
+####  **Third Place: MSPA (600 epochs)**
 - **mAP50**: 93.42%
 - **mAP50-95**: 66.44%
 - **Precision**: 90.21% (second highest precision)
 - **Recall**: 89.84% (tied for highest recall)
 - **Best for**: Minimizing false alarms
 
-### 📈 Key Insights
+###  Key Insights
 
 1. **Extended Training Impact**: 600 vs 200 epochs shows significant improvement
    - Average mAP50 improvement: +7.8%
@@ -144,7 +149,7 @@ FDI_Yolov8/
 ### Example
 
 
-## 🚀 Usage
+##  Usage
 
 ### Training a Model
 ```bash
@@ -224,7 +229,7 @@ python model_evaluation.py
 ![predictions ](docs/figures/predictions.jpg)
 
 
-## 🚀 Enhanced Wind Turbine Detector Usage
+##  Enhanced Wind Turbine Detector Usage
 
 ### Quick Start
 
@@ -272,12 +277,12 @@ python src/detection/wind_turbine_detector.py --model models/experiments_600/sel
 
 ### Processing Modes
 
-#### 🧩 **Tiled Detection** (High-Resolution Images > 2000px)
+####  **Tiled Detection** (High-Resolution Images > 2000px)
 - **Best for**: Large drone images, detailed inspection photos
 - **Features**: Automatic tile generation, smart overlap handling, optimized memory usage
 - **Performance**: Processes 5280×3956 image in ~3 seconds with 35 tiles
 
-#### ⚡ **Simple Detection** (Standard Images ≤ 2000px)
+####  **Simple Detection** (Standard Images ≤ 2000px)
 - **Best for**: Standard photos, quick processing
 - **Features**: Direct inference, fast processing
 - **Performance**: Sub-second processing for typical images
@@ -291,16 +296,16 @@ The detector generates comprehensive outputs:
 
 ### Example Results
 ```
-🎉 Processing Complete!
-📊 Images processed: 1
-🔍 Total detections: 18 damages found
-⏱️  Total time: 3.33s
-⚡ Average per image: 3.33s
+ Processing Complete!
+ Images processed: 1
+ Total detections: 18 damages found
+ Total time: 3.33s
+ Average per image: 3.33s
 ```
 
 ![Sliding Window Example ](docs/figures/sliding_window.jpg)
 
-## 🎯 Recommendations
+##  Recommendations
 
 ### For Production Deployment
 - **Best Choice**: **SKA (600 epochs)** - 93.70% mAP50, 69.42% mAP50-95
@@ -317,7 +322,7 @@ The detector generates comprehensive outputs:
 - Reduces false positive maintenance calls
 - Cost-effective for large-scale deployments
 
-## 📊 Dataset
+##  Dataset
 
 The models were trained and evaluated on the GRAZPEDWRI-DX dataset, located in `data/raw/GRAZPEDWRI-DX/`, specifically adapted for wind turbine damage detection with comprehensive annotations for:
 - Crack patterns and severity
@@ -330,7 +335,7 @@ The models were trained and evaluated on the GRAZPEDWRI-DX dataset, located in `
 - `data/samples/avingrid_data/` - High-resolution test images
 - `data/samples/img/` - Additional sample images
 
-## 🔧 Installation
+##  Installation
 
 ```bash
 # Install dependencies
@@ -340,7 +345,7 @@ pip install -r configs/requirements.txt
 pip install torch torchvision torchaudio ultralytics opencv-python numpy matplotlib pandas
 ```
 
-## 🛠️ Additional Tools
+##🛠️ Additional Tools
 
 The organized repository includes several useful tools:
 
@@ -372,34 +377,34 @@ python src/utils/split.py --dataset data/raw/GRAZPEDWRI-DX/ --split-ratio 0.8 0.
 python src/utils/imgaug.py --input data/samples/ --output data/processed/augmented/
 ```
 
-## ✨ Repository Organization Benefits
+##  Repository Organization Benefits
 
 This repository has been professionally organized following ML project best practices:
 
-- **🎯 Clear Structure**: Find any file quickly by functionality
-- **🔧 Modular Code**: Easy to import and reuse components  
-- **📊 Organized Results**: All outputs in predictable locations
-- **🤝 Collaboration Ready**: Standard structure familiar to ML practitioners
-- **🔄 Backward Compatible**: Existing workflows continue to work
-- **📦 Easy Maintenance**: Logical organization simplifies updates
-- **🧪 Experiment Tracking**: Clear separation of model experiments
+- ** Clear Structure**: Find any file quickly by functionality
+- ** Modular Code**: Easy to import and reuse components  
+- ** Organized Results**: All outputs in predictable locations
+- ** Collaboration Ready**: Standard structure familiar to ML practitioners
+- ** Backward Compatible**: Existing workflows continue to work
+- ** Easy Maintenance**: Logical organization simplifies updates
+- ** Experiment Tracking**: Clear separation of model experiments
 
-## 📚 Documentation
+##  Documentation
 
 For detailed information about the repository structure and advanced usage:
 - **Directory Structure Guide**: `docs/DIRECTORY_STRUCTURE.md`
 - **Performance Analysis**: `results/evaluations/YOLOv8_Attention_Performance_Analysis_*.xlsx`
 - **Additional Documentation**: `docs/README_sliding_window.md`
 
-## 📄 License
+##  License
 
 This project is licensed under the terms specified in the LICENSE file.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Based on the original YOLOv8 architecture by Ultralytics, enhanced with custom attention mechanisms for wind turbine damage detection applications. Repository organization follows ML industry best practices for maintainability and collaboration.
 
-## 📞 Contact
+##  Contact
 
 For questions about implementation, results, or repository structure, please open an issue in this repository.
 
